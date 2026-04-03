@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="120dp"
+    android:layout_height="100dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_margin="10dp"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp"
+    android:layout_marginTop="5dp"
     app:cardCornerRadius="12dp"
     android:backgroundTint="@color/white">
     <LinearLayout
@@ -18,8 +20,7 @@
             android:text="Advanced Certification Program in Ai"
             android:textStyle="bold"
             android:textSize="22sp"
-            android:gravity="center"
-            android:layout_marginTop="30dp"
+            android:gravity="center_horizontal"
             android:padding="8dp"/>
         <ImageView
             android:id="@+id/iv_cart_img"

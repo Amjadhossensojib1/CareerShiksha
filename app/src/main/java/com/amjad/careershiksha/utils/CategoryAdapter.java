@@ -11,9 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.amjad.careershiksha.R;
-import com.amjad.careershiksha.SemesterActivity;
+import com.amjad.careershiksha.ui.semester.SemesterActivity;
 import com.amjad.careershiksha.model.Category;
-import com.amjad.careershiksha.model.Course;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -21,7 +20,6 @@ import java.util.List;
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder> {
 
     private List<Category> categoryList;
-    CategoryItemClickListener listener;
 
     public CategoryAdapter(List<Category> categoryList) {
         this.categoryList = categoryList;
@@ -38,7 +36,6 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
     public void onBindViewHolder(@NonNull CategoryAdapter.CategoryViewHolder holder, int position) {
         Category category = categoryList.get(position);
         holder.bind(category);
-
     }
 
     @Override
@@ -49,24 +46,22 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
     public class CategoryViewHolder extends RecyclerView.ViewHolder {
         private ImageView categoryImage;
         private TextView categoryName;
+
         public CategoryViewHolder(@NonNull View itemView) {
             super(itemView);
             categoryImage = itemView.findViewById(R.id.category_image);
             categoryName = itemView.findViewById(R.id.category_Name);
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent = new Intent(itemView.getContext(), SemesterActivity.class);
-                    itemView.getContext().startActivity(intent);
-
-                }
-            });
         }
 
         public void bind(Category category) {
             Picasso.get().load(category.getCategoryImage()).into(categoryImage);
             categoryName.setText(category.getCategoryName());
 
+            itemView.setOnClickListener(v -> {
+                Intent intent = new Intent(itemView.getContext(), SemesterActivity.class);
+                intent.putExtra("department", category.getCategoryName());  // send department
+                itemView.getContext().startActivity(intent);
+            });
         }
     }
 }

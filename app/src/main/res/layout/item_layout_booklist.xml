@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:padding="8dp"
+    android:elevation="4dp"
+    android:radius="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/iv_book_image"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:src="@drawable/book"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/tv_book_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Environmental Engineering"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:padding="6dp"/>
+
+        <TextView
+            android:id="@+id/tv_publication_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="By Haque Publication"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:paddingBottom="10dp"/>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

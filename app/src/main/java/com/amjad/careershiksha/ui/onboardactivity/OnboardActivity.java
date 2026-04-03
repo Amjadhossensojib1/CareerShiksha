@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.amjad.careershiksha.dashboardactivity.DashboardActivity;
 import com.amjad.careershiksha.R;
+import com.amjad.careershiksha.ui.loginActiity.LoginActivity;
 
 public class OnboardActivity extends AppCompatActivity {
     private Button btnGetStarted;
@@ -22,7 +23,7 @@ public class OnboardActivity extends AppCompatActivity {
         btnGetStarted.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(OnboardActivity.this, DashboardActivity.class));
+                startActivity(new Intent(OnboardActivity.this, LoginActivity.class));
             }
         });
 

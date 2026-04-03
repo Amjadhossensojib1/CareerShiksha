@@ -26,7 +26,6 @@ public class CategoryFragment extends Fragment {
     private RecyclerView recyclerView;
     private ArrayList<Category> categoryList;
     private CategoryAdapter adapter;
-    private ImageSlider imageSlider;
 
     public CategoryFragment() {
 
@@ -43,16 +42,6 @@ public class CategoryFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view =  inflater.inflate(R.layout.fragment_category, container, false);
-
-        imageSlider = view.findViewById(R.id.image_slider);
-
-        ArrayList<SlideModel> slideModels = new ArrayList<>();
-        slideModels.add(new SlideModel("https://media.istockphoto.com/id/1081869356/photo/taking-on-the-late-shift-with-true-dedication.jpg?s=612x612&w=0&k=20&c=6cd0XCc7SXbwh3gDTDgg7yjljBPbW8gAmUUmDCQqs9E=", ScaleTypes.FIT));
-        slideModels.add(new SlideModel("https://media.istockphoto.com/id/1481351241/photo/factory-digitalization-two-industrial-engineers-use-tablet-computer-visualize-3d-model-of.jpg?s=612x612&w=0&k=20&c=UDNhRoMtX4Cys1IQ_J-Uf5t5AAY608gdXWv_0iBdYx0=", ScaleTypes.FIT));
-        slideModels.add(new SlideModel("https://www.shutterstock.com/image-photo/architects-engineer-create-architectural-works-600nw-1687045909.jpg", ScaleTypes.FIT));
-        slideModels.add(new SlideModel("https://www.iebbd.org/upload/20250825_306962941_1615660509.JPEG", ScaleTypes.FIT));
-        slideModels.add(new SlideModel("https://img.freepik.com/free-photo/human-hand-passing-gear-robotic-hand_23-2152006116.jpg?semt=ais_hybrid&w=740&q=80", ScaleTypes.FIT));
-        imageSlider.setImageList(slideModels);
 
         recyclerView = view.findViewById(R.id.Recyclerview);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
