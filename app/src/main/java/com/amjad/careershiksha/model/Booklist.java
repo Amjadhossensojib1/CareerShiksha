@@ -17,7 +17,7 @@ public class Booklist {
     public String getBookName()  {
         return bookName;
     }
-    public int getPdfResId()     {
+    public int getPdfResId()  {
         return pdfResId;
     }
 }
